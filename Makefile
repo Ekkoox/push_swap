@@ -14,7 +14,7 @@ all: ${NAME}
 ${NAME}: ${SRCS}
 	make -C lib/libft
 	make -C lib/ft_printf
-	cc ${CFLAGS} ${SRCS} -I ${NAME} ${DEPS}
+	cc ${CFLAGS} ${SRCS} -L -l -I -lm -lz -o ${NAME} ${DEPS}
 
 clean:
 	make -C lib/libft clean
