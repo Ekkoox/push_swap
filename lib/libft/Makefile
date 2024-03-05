@@ -34,6 +34,7 @@ SRCS = ft_atoi.c\
        ft_putendl_fd.c\
        ft_strlcpy.c\
        ft_strlcat.c\
+	   ft_count_line_split.c\
 
 OBJS =          ${SRCS:.c=.o}
 
@@ -44,8 +45,8 @@ all:            ${NAME}
 ${NAME}:        ${OBJS}
 				ar rc ${NAME} ${OBJS}
 
-${OBJS}:
-				cc ${CFLAGS} ${SRCS} -c -I.
+.c.o:
+	cc $(CFLAGS) -c $^
 
 clean:
 				rm -rf ${OBJS}

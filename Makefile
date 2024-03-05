@@ -1,10 +1,12 @@
 NAME = push_swap
 
 C_FILES = main.c\
+			error_msg.c\
+			fusion_and_split_args.c\
 
 SRCS = $(addprefix srcs/,$(C_FILES))
 
-CFLAGS = -Wall -Werror -Wextra -I includes/
+CFLAGS = -Wall -Werror -Wextra -I includes/ -g
 
 LIB = ft_printf/libftprintf.a libft/libft.a
 DEPS = $(addprefix lib/,$(LIB))
@@ -14,7 +16,7 @@ all: ${NAME}
 ${NAME}: ${SRCS}
 	make -C lib/libft
 	make -C lib/ft_printf
-	cc ${CFLAGS} ${SRCS} -L -l -I -lm -lz -o ${NAME} ${DEPS}
+	cc ${CFLAGS} ${SRCS} -o ${NAME} ${DEPS}
 
 clean:
 	make -C lib/libft clean

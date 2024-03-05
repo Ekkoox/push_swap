@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_count_line_split.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/05 15:30:04 by enschnei         ###   ########.fr       */
+/*   Created: 2024/03/05 15:01:24 by enschnei          #+#    #+#             */
+/*   Updated: 2024/03/05 15:24:04 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main(int ac, char **av)
+size_t	ft_count_line_split(char **split)
 {
-	int i;
-	char **split;
-	
-	i = 0;
-	(void)av;
-	if (ac == 1)
-		error_number_of_args();
-	split = split_args(ac, av);
-	ft_free(split, ft_count_line_split(split));
-	return (0);
+	size_t	y;
+
+	y = 0;
+	while (split[y])
+		y++;
+	return (y);
 }

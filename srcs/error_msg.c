@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/05 15:30:04 by enschnei         ###   ########.fr       */
+/*   Created: 2024/02/23 14:14:17 by enschnei          #+#    #+#             */
+/*   Updated: 2024/03/05 11:02:11 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+void error_number_of_args()
 {
-	int i;
-	char **split;
-	
-	i = 0;
-	(void)av;
-	if (ac == 1)
-		error_number_of_args();
-	split = split_args(ac, av);
-	ft_free(split, ft_count_line_split(split));
-	return (0);
+	ft_printf ("!!! ERROR !!! There is any number !\n");
+	exit (0);
 }
