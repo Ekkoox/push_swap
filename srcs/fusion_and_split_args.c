@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:58:24 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/06 15:57:52 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/06 19:08:10 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char	**split_args(int ac, char **av)
 	int		i;
 
 	i = 0;
+	check_empty_args(ac, av);
 	arg = join_args(ac, av);
 	if (!arg)
 	{

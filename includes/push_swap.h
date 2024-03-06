@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/06 15:57:09 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/06 18:18:49 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ typedef struct s_swap
 	struct s_swap	*prev;
 }					t_swap;
 
+int					check_duplicate(t_swap *swap);
 int 				check_only_numbers(t_swap *swap);
-void				check_empty_args(int ac, char **av);
 void 				error_number_of_args();
 void				error_args(t_swap *swap);
+void				check_empty_args(int ac, char **av);
 char				**split_args(int ac, char **av);
 
 #endif
