@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/05 15:14:02 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:57:09 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,18 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// typedef struct s_swap
-// {
-// 	int nb;
-// 	struct s_swap *next;
-// 	struct s_swap *prev;
-// }	t_swap;
+typedef struct s_swap
+{
+	int				nb;
+	char			**split;
+	struct s_swap	*next;
+	struct s_swap	*prev;
+}					t_swap;
 
-char **split_args(int ac, char **av);
-int count_len_args(int ac, char **av);
-void error_number_of_args();
+int 				check_only_numbers(t_swap *swap);
+void				check_empty_args(int ac, char **av);
+void 				error_number_of_args();
+void				error_args(t_swap *swap);
+char				**split_args(int ac, char **av);
 
 #endif

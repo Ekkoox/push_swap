@@ -1,0 +1,14 @@
+1 : check doublon
+2 : que des chiffre et des nombre GOOD
+3 : 0000000000000000000000000000005 = 5
+4 : accepter que le - et le + MAIS QUE AU DEBUT
+5 : carefull empty arg GOOD
+6 : pas au dela du int
+
+
+ 1   2   3
+av1 av2 av3
+1 2 3 $ = str
+1$
+2$
+3$

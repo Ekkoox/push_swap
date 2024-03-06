@@ -6,16 +6,16 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:58:24 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/05 16:01:33 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:57:52 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int count_len_args(int ac, char **av)
+static int	count_len_args(int ac, char **av)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 1;
 	len = 0;
@@ -24,30 +24,28 @@ int count_len_args(int ac, char **av)
 		len = len + (ft_strlen(av[i]) + 1);
 		i++;
 	}
-	return(len);
+	return (len);
 }
 
-static char *join_args(int ac, char **av)
+static char	*join_args(int ac, char **av)
 {
-	int i;
-	int j;
-	int k;
-	int len;
-	char *str;
+	int		i;
+	int		j;
+	int		k;
+	int		len;
+	char	*str;
 
 	i = 1;
 	k = 0;
 	len = count_len_args(ac, av);
-	str = malloc (sizeof(char) * len + 1);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
-		return(NULL);
+		return (NULL);
 	while (i < ac)
 	{
 		j = 0;
-		while(av[i][j])
-		{
+		while (av[i][j])
 			str[k++] = av[i][j++];
-		}
 		str[k++] = ' ';
 		i++;
 	}
@@ -56,12 +54,13 @@ static char *join_args(int ac, char **av)
 	return (str);
 }
 
-char **split_args(int ac, char **av)
+char	**split_args(int ac, char **av)
 {
-	char **split;
-	char *arg;
-	// int i = 0;
+	char	**split;
+	char	*arg;
+	int		i;
 
+	i = 0;
 	arg = join_args(ac, av);
 	if (!arg)
 	{
@@ -70,10 +69,22 @@ char **split_args(int ac, char **av)
 	}
 	split = ft_split(arg, ' ');
 	// while (split[i])
-    // {
-    //     printf("%s\n", split[i]);
-    //     i++;
-    // }
-	free (arg);
-	return(split);
+	// {
+	// 	printf("%s\n", split[i]);
+	// 	i++;
+	// }
+	free(arg);
+	return (split);
 }
+
+// t_swap *split_to_list(char **split)
+// {
+// 	int i;
+
+// 	i = 0;
+// 	while (split[i])
+// 	{
+
+// 	}
+
+// }
