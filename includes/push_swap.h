@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/06 18:18:49 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/07 16:53:38 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+#define INT_MIN -2147483648
+#define INT_MAX 2147483647
+
 typedef struct s_swap
 {
 	int				nb;
@@ -27,6 +30,7 @@ typedef struct s_swap
 }					t_swap;
 
 int					check_duplicate(t_swap *swap);
+int 				check_max_and_min(t_swap *swap);
 int 				check_only_numbers(t_swap *swap);
 void 				error_number_of_args();
 void				error_args(t_swap *swap);

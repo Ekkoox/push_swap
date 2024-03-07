@@ -3,4 +3,17 @@
 3 : 0000000000000000000000000000005 = 5 GOOD
 4 : accepter que le - et le + MAIS QUE AU DEBUT GOOD
 5 : carefull empty arg GOOD
-6 : pas au dela du int	
+6 : pas au dela du int PAS GOOD
+
+
++00000000005
+
+if (ft_strlen(nb) == 10)
+{
+	if (nb[0] > 3)
+		return(0);
+}
+nb(2147483648) > 2147483647
+nb(-2147483648)> 2147483647
+
++0
