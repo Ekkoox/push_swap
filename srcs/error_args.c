@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:19:52 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/07 17:29:52 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:01:57 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,52 +89,24 @@ int	check_duplicate(t_swap *swap)
 	return (0);
 }
 
+// pour check 18446744073709551615
 static int	check_looong(char *str)
 {
-	int i;
-
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] == '0')
-		i++;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str == '0')
+		str++;
 	if (ft_strlen(str) > 11)
 		return (1);
 	return (0);
 }
 
-long	ft_atol(char *str)
+int	check_max_and_min(t_swap *swap)
 {
-	int i;
-	long	res;
-	int		sign;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-')
-	{
-		sign *= -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return (res * sign);
-}
-
-int check_max_and_min(t_swap *swap)
-{
-	int j;	
-	long nb1;
+	int		j;
+	long	nb1;
 
 	j = 0;
 	while (swap->split[j])

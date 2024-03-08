@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:58:24 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/07 13:29:42 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:58:58 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*join_args(int ac, char **av)
 		i++;
 	}
 	str[k] = '\0';
-	ft_printf("%s\n", str);
+	ft_printf("Le join vaut %s\n", str);
 	return (str);
 }
 
@@ -71,7 +71,7 @@ char	**split_args(int ac, char **av)
 	split = ft_split(arg, ' ');
 	while (split[i])
 	{
-		printf("%s\n", split[i]);
+		printf("Split [%d] vaut %s\n", i, split[i]);
 		i++;
 	}
 	free(arg);

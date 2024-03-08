@@ -6,15 +6,17 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:21:59 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/07 17:22:03 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/08 14:15:05 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 long	ft_atol(char *str)
 {
-	int i;
-	long	res;
+	int		i;
 	int		sign;
+	long	res;
 
 	i = 0;
 	res = 0;

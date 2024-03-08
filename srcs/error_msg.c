@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:14:17 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/07 17:03:40 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:40:14 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	error_number_of_args(void)
 // 		exit(0);
 // }
 
-void	error_args(t_swap *swap)
+void	error_arguments(t_swap *swap)
 {
 	if (check_only_numbers(swap) == 1)
 	{

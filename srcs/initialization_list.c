@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   initialization_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 14:42:32 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/08 14:13:23 by enschnei         ###   ########.fr       */
+/*   Created: 2024/03/08 15:42:00 by enschnei          #+#    #+#             */
+/*   Updated: 2024/03/08 18:08:23 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	split_to_list(t_swap **stack)
 {
-	int	i;
+	int j;
 
-	i = 0;
-	while ((s1[i] && s2[i]) && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+	j = 0;
+	while (swap->split[j])
+	{
+		ft_atoi(swap->split[j]) = swap->next;
+		j++;
+	}
 }
