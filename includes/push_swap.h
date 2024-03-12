@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/08 18:06:00 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:15:37 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int					check_duplicate(t_swap *swap);
 int					check_max_and_min(t_swap *swap);
 int					check_only_numbers(t_swap *swap);
 void				error_number_of_args(void);
-void				split_to_list(t_swap *swap);
 void				error_arguments(t_swap *swap);
+void				add_node(t_swap **swap, int nb);
 void				check_empty_args(int ac, char **av);
 char				**split_args(int ac, char **av);
 
