@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fusion_and_split_args.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:58:24 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/11 17:50:17 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:16:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,3 @@ char	**split_args(int ac, char **av)
 	free(arg);
 	return (split);
 }
-
-// t_swap *split_to_list(char **split)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (split[i])
-// 	{
-
-// 	}
-
-// }

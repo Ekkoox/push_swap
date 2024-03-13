@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/12 18:15:37 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:14:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_swap
 int					check_duplicate(t_swap *swap);
 int					check_max_and_min(t_swap *swap);
 int					check_only_numbers(t_swap *swap);
+void				print_swap(t_swap **swap);
 void				error_number_of_args(void);
 void				error_arguments(t_swap *swap);
 void				add_node(t_swap **swap, int nb);
