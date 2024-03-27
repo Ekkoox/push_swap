@@ -12,44 +12,32 @@
 
 #include "push_swap.h"
 
-static int ft_sa(t_swap **a)
+static int swap_list(t_swap *swap)
 {
-    int tmp;
+	int tmp;
 
-    if (!*a || !*(a)->next)
-        return (NULL);
-    tmp = *(a)->nb;
-    *(a)->nb = *(a)->next->nb;
-    *(a)->next->nb = tmp;
-    return (1);
+	if (!swap)
+		return (0);
+	tmp = swap->nb;
+	swap->nb = swap->next->nb;
+	swap->next->nb = tmp;
+	return (1);
 }
 
-static int ft_sb(t_swap **b)
+void ft_sa(t_swap *a)
 {
-    int tmp;
-
-    if (!*b || !*(b)->next)
-        return (NULL);
-    tmp = *(b)->nb;
-    *(b)->nb = *(b)->next->nb;
-    *(b)->next->nb = tmp;
-    return (1);
+	if (swap_list(a) == 1)
+    	ft_printf ("sa\n");
 }
 
-static int ft_ss(t_swap **stack)
+void ft_sb(t_swap *b)
 {
-    ft_sa(a);
-    ft_sb(b);
-    return(1);
-}
-
-void print_swap(t_swap **swap)
-{
-    if (ft_sa == 1)
-        ft_printf ("sa\n");
-    if (ft_sb == 1)
+    if (swap_list(b) == 1)
         ft_printf ("sb\n");
-    if (ft_ss == 1)
+}
+
+void ft_ss(t_swap *a, t_swap *b)
+{
+    if (swap_list(a) == 1 && swap_list(b) == 1)
         ft_printf ("ss\n");
 }
-

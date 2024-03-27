@@ -12,21 +12,31 @@
 
 #include "push_swap.h"
 
-static int ft_pa(t_swap **a)
+static int push_list_a(t_swap **a, t_swap **b)
 {
-    return (1);
+	if (!*a)
+		return (0);
+	*b = *a;
+	*a = (*a)->next;
+	(*a)->prev = NULL;
+	return (1);
 }
 
-static int ft_pb(t_swap **b)
+static int push_list_b(t_swap **a, t_swap **b)
 {
-
-    return (1);
+	if (!*a || !*b)
+		return (0);
+	return (1);
 }
 
-void print_swap(t_swap **swap)
+void ft_pa(t_swap **a, t_swap **b)
 {
-    if (ft_pa == 1)
-        ft_printf ("pa\n");
-    if (ft_pb == 1)
-        ft_printf ("pb\n");
+	if (push_list_a(a, b) == 1)
+		ft_printf("pa\n");
+}
+
+void ft_pb(t_swap **a, t_swap **b)
+{
+	if (push_list_b(a, b) == 1)	
+		ft_printf("pb\n");
 }

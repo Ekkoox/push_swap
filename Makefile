@@ -3,6 +3,11 @@ NAME = push_swap
 C_FILES = main.c\
 			error_msg.c\
 			error_args.c\
+			swap.c\
+			push.c\
+			reverse.c\
+			rotate.c\
+			initialization_list.c\
 			fusion_and_split_args.c\
 
 SRCS = $(addprefix srcs/,$(C_FILES))
