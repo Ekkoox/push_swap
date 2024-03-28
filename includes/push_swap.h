@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/27 19:08:03 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:31:58 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,28 @@ typedef struct s_swap
 
 }					t_swap;
 
-
 int					check_duplicate(t_swap *swap);
 int					check_max_and_min(t_swap *swap);
 int					check_only_numbers(t_swap *swap);
-void 				ft_sa(t_swap *a);
-void 				ft_ra(t_swap **a);
-void 				ft_pa(t_swap **a, t_swap **b);
-void 				ft_rra(t_swap **a);
-void 				ft_sb(t_swap *b);
-void 				ft_rb(t_swap **b);
-void 				ft_rrb(t_swap **b);
-void 				ft_pb(t_swap **a, t_swap **b);
 void				error_number_of_args(void);
 void				error_arguments(t_swap *swap);
-void 				ft_rr(t_swap **a, t_swap **b);
-void 				ft_rrr(t_swap **a, t_swap **b);
-void 				ft_ss(t_swap *a, t_swap *b);
-void				add_node(t_swap **swap, int nb);
 void				check_empty_args(int ac, char **av);
 char				**split_args(int ac, char **av);
 t_swap				*found_last_list(t_swap *swap);
 t_swap				*split_to_list(t_swap *swap, char **split);
+
+/*******************COMMANDE**********************/
+void 				ft_sa(t_swap *a);
+void 				ft_sb(t_swap *b);
+void 				ft_ss(t_swap *a, t_swap *b);
+void 				ft_pa(t_swap **a, t_swap **b);
+void 				ft_pb(t_swap **a, t_swap **b);
+void 				ft_ra(t_swap **a);
+void 				ft_rb(t_swap **b);
+void 				ft_rr(t_swap **a, t_swap **b);
+void 				ft_rra(t_swap **a);
+void 				ft_rrb(t_swap **b	);
+void 				ft_rrr(t_swap **a, t_swap **b);
+/**************************************************/
 
 #endif

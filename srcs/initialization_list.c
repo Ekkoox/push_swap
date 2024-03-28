@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:42:00 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/27 17:20:43 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:31:44 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_swap	*found_last_list(t_swap *swap)
 	return (swap);
 }
 
-void	add_node(t_swap **swap, int nb)
+static void	add_node(t_swap **swap, int nb)
 {
 	t_swap	*node;
 	t_swap	*last;
