@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:19:52 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/11 17:42:15 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/03/29 17:25:09 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,24 @@ void	check_empty_args(int ac, char **av)
 	}
 }
 
-int	check_only_numbers(t_swap *swap)
+int	check_only_numbers(char **split)
 {
 	int	i;
 	int	j;
 
 	j = 0;
-	while (swap->split[j])
+	while (split[j])
 	{
 		i = 0;
-		if ((swap->split[j][0] == '+' || swap->split[j][0] == '-')
-			&& (swap->split[j][i + 1] >= '0' && swap->split[j][i + 1] <= '9'))
+		if ((split[j][0] == '+' || split[j][0] == '-')
+			&& (split[j][i + 1] >= '0' && split[j][i + 1] <= '9'))
 			i++;
-		while (swap->split[j][i])
+		while (split[j][i])
 		{
-			if (swap->split[j][i] >= '0' && swap->split[j][i] <= '9')
+			if (split[j][i] >= '0' && split[j][i] <= '9')
 				i++;
-			else if (swap->split[j][i] == '*' || swap->split[j][i] == '/'
-				|| swap->split[j][i] == '%')
+			else if (split[j][i] == '*' || split[j][i] == '/'
+				|| split[j][i] == '%')
 				return (1);
 			else
 				return (2);
@@ -65,7 +65,7 @@ int	check_only_numbers(t_swap *swap)
 	return (0);
 }
 
-int	check_duplicate(t_swap *swap)
+int	check_duplicate(char **split)
 {
 	int	i;
 	int	j;
@@ -73,13 +73,13 @@ int	check_duplicate(t_swap *swap)
 	int	nb2;
 
 	j = 0;
-	while (swap->split[j])
+	while (split[j])
 	{
-		nb1 = ft_atoi(swap->split[j]);
+		nb1 = ft_atoi(split[j]);
 		i = j + 1;
-		while (swap->split[i])
+		while (split[i])
 		{
-			nb2 = ft_atoi(swap->split[i]);
+			nb2 = ft_atoi(split[i]);
 			if (nb1 == nb2)
 				return (1);
 			i++;
@@ -103,17 +103,17 @@ static int	check_looong(char *str)
 	return (0);
 }
 
-int	check_max_and_min(t_swap *swap)
+int	check_max_and_min(char **split)
 {
 	int		j;
 	long	nb1;
 
 	j = 0;
-	while (swap->split[j])
+	while (split[j])
 	{
-		if (check_looong(swap->split[j]) == 1)
+		if (check_looong(split[j]) == 1)
 			return (3);
-		nb1 = ft_atol(swap->split[j]);
+		nb1 = ft_atol(split[j]);
 		if (nb1 < INT_MIN || nb1 > INT_MAX)
 			return (1);
 		j++;
