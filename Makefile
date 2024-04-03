@@ -4,6 +4,7 @@ C_FILES = main.c\
 			algo.c\
 			push.c\
 			swap.c\
+			median.c\
 			rotate.c\
 			reverse.c\
 			error_msg.c\

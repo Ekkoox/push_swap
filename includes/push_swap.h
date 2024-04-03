@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/30 15:52:09 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:47:03 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@
 typedef struct s_swap
 {
 	int				nb;
+	int				number_max;
 	struct s_swap	*next;
 	struct s_swap	*prev;
 
 }					t_swap;
 
+int 				search_median(t_swap *a);
 int					count_arg_list(t_swap *swap);
 int					check_duplicate(char **split);
 int					check_max_and_min(char **split);

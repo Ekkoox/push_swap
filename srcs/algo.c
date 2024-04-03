@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:22:02 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/30 15:51:48 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:57:28 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ void	sort_three(t_swap **a)
 		ft_ra(a);
 	if ((*a)->nb < (*a)->next->nb && (*a)->next->nb > (*a)->next->next->nb)
 	{
+		ft_printf("ZIZI\n");
 		ft_rra(a);
 		ft_sa(*a);
 	}
 	if ((*a)->nb > (*a)->next->nb)
+	{
+		ft_printf("Yo\n");
 		ft_sa(*a);
+	}
 	if ((*a)->next->nb > (*a)->next->next->nb)
 		ft_rra(a);
 }
