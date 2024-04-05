@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/03 15:47:03 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/05 19:31:05 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 typedef struct s_swap
 {
 	int				nb;
-	int				number_max;
+	int				index;
 	struct s_swap	*next;
 	struct s_swap	*prev;
 
@@ -38,11 +38,14 @@ int					check_only_numbers(char **split);
 void				sort_three(t_swap **a);
 void				free_stack(t_swap *swap);
 void				error_number_of_args(void);
+void 				get_index_list(t_swap *swap);
 void				error_arguments(char **split);
 void 				sort_to_b(t_swap **a, t_swap **b);
 void				check_empty_args(int ac, char **av);
 void				sort_push_swap(t_swap **a, t_swap **b);
 char				**split_args(int ac, char **av);
+t_swap 				*min_numbers(t_swap *swap);
+t_swap 				*max_numbers(t_swap *swap);
 t_swap				*found_last_list(t_swap *swap);
 t_swap				*split_to_list(t_swap *swap, char **split);
 
