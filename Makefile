@@ -9,6 +9,7 @@ C_FILES = main.c\
 			reverse.c\
 			error_msg.c\
 			error_args.c\
+			set_up_node.c\
 			set_up_algo.c\
 			initialization_list.c\
 			fusion_and_split_args.c\

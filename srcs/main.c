@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/05 19:33:01 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:19:00 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int	main(int ac, char **av)
 	error_arguments(split);
 	a = split_to_list(a, split);
 	sort_push_swap(&a, &b);
-	displaylist_a(a);
-	displaylist_b(b);
+	// displaylist_a(a);
+	// displaylist_b(b);
 	free_stack(a);
 	free_stack(b);
 	ft_free(split, ft_count_line_split(split));
