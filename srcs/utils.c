@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:43:31 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/05 19:08:37 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:20:22 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,21 @@ int	count_arg_list(t_swap *swap)
 	return (len);
 }
 
+void	a_to_b(t_swap *a, t_swap *b, int median)
+{
+	if (a->nb > median)
+	{
+		ft_pb(a, b);
+		ft_rb(b);
+	}
+	else
+		ft_pb(a, b);
+}
+
+void	b_to_a(t_swap **a, t_swap **b)
+{
+	t_swap *cheap;
+	
+	cheap = get_cheap(*b);
+	ft_pa;
+}

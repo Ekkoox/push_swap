@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/12 18:34:23 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:55:15 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,15 @@
 typedef struct s_swap
 {
 	int				nb;
-	int				cost;
-	int				index;
-	int				cheap_cost;
-	int				above_median;
-	struct s_swap	*target;
+	int				cost; //initialiser dans b_cost
+	int				index; //initialiser dans get_index
+	int				cheap_cost; //initialiser dans b_cost
+	int				above_median; //initialiser dans get_index
+	struct s_swap	*target; // initialiser dans get_target
 	struct s_swap	*next;
 	struct s_swap	*prev;
 }					t_swap;
 
-int					get_cheap(t_swap *b);
 int 				search_median(t_swap *a);
 int					count_arg_list(t_swap *swap);
 int					check_duplicate(char **split);
@@ -49,7 +48,10 @@ void 				sort_to_b(t_swap **a, t_swap **b);
 void				check_empty_args(int ac, char **av);
 void				sort_push_swap(t_swap **a, t_swap **b);
 void 				a_to_b(t_swap **a, t_swap **b, int median);
+void				rotate_up_median(t_swap *a, t_swap *b, t_swap *cheapest);
+void				rotate_down_median(t_swap *a, t_swap *b, t_swap *cheapest);
 char				**split_args(int ac, char **av);
+t_swap				*get_cheap(t_swap *b);
 t_swap 				*min_numbers(t_swap *swap);
 t_swap 				*max_numbers(t_swap *swap);
 t_swap				*found_last_list(t_swap *swap);

@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:24:42 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/12 19:04:47 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:54:13 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	get_target(t_swap *a, t_swap *b)
 	}
 }
 
-void b_cost(t_swap *a, t_swap *b)
+void	b_cost(t_swap *a, t_swap *b)
 {
-	int len_a;
-	int len_b;
-	
+	int	len_a;
+	int	len_b;
+
 	len_a = count_arg_list(a);
 	len_b = count_arg_list(b);
 	while (b)
@@ -75,17 +75,18 @@ void b_cost(t_swap *a, t_swap *b)
 		else
 			b->cost += len_a - b->target->index;
 		b = b->next;
-	}	
+	}
 }
 
-int	get_cheap(t_swap *b)
+t_swap	*get_cheap(t_swap *b)
 {
-	int 	cheap;
-	t_swap *tmp_b;
-	
+	int		cheap;
+	t_swap	*tmp_b;
+
 	tmp_b = b;
 	cheap = b->cost;
-	while(b)
+	b = b->next;
+	while (b)
 	{
 		b->cheap_cost = 0;
 		if (b->cost < cheap)
@@ -97,9 +98,10 @@ int	get_cheap(t_swap *b)
 		}
 		b = b->next;
 	}
+	return (b);
 }
 
-void reload_node(t_swap *a, t_swap *b)
+void	reload_node(t_swap *a, t_swap *b)
 {
 	get_index_list(a);
 	get_index_list(b);
