@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:24:42 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:54:13 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:01:09 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@ void	get_index_list(t_swap *swap)
 	int	i;
 	int	middle;
 
+	if (!swap)
+		return ;
 	i = 0;
 	middle = count_arg_list(swap) / 2;
 	while (swap)
 	{
 		swap->index = i;
-		swap = swap->next;
 		if (i <= middle)
 			swap->above_median = 1;
 		else
 			swap->above_median = 0;
+		swap = swap->next;
 		i++;
 	}
 }
@@ -68,9 +70,9 @@ void	b_cost(t_swap *a, t_swap *b)
 	while (b)
 	{
 		b->cost = b->index;
-		if (b->above_median == 1)
+		if (!(b->above_median))
 			b->cost = len_b - b->index;
-		if (b->target->above_median == 0)
+		if (b->target->above_median)
 			b->cost += b->target->above_median;
 		else
 			b->cost += len_a - b->target->index;
@@ -78,13 +80,14 @@ void	b_cost(t_swap *a, t_swap *b)
 	}
 }
 
-t_swap	*get_cheap(t_swap *b)
+void set_cheap(t_swap *b)
 {
 	int		cheap;
 	t_swap	*tmp_b;
 
-	tmp_b = b;
 	cheap = b->cost;
+	tmp_b = b;
+	tmp_b->cheap_cost = 1;
 	b = b->next;
 	while (b)
 	{
@@ -98,7 +101,6 @@ t_swap	*get_cheap(t_swap *b)
 		}
 		b = b->next;
 	}
-	return (b);
 }
 
 void	reload_node(t_swap *a, t_swap *b)
@@ -107,5 +109,5 @@ void	reload_node(t_swap *a, t_swap *b)
 	get_index_list(b);
 	get_target(a, b);
 	b_cost(a, b);
-	get_cheap(b);
+	set_cheap(b);
 }

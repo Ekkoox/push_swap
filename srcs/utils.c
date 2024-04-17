@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:43:31 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/15 15:20:22 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:28:35 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	count_arg_list(t_swap *swap)
 {
 	int	len;
 
+	if (!swap)
+		return (0);
 	len = 0;
 	while (swap)
 	{
@@ -67,9 +69,9 @@ int	count_arg_list(t_swap *swap)
 	return (len);
 }
 
-void	a_to_b(t_swap *a, t_swap *b, int median)
+void	a_to_b(t_swap **a, t_swap **b, int median)
 {
-	if (a->nb > median)
+	if ((*a)->nb > median)
 	{
 		ft_pb(a, b);
 		ft_rb(b);
@@ -78,10 +80,22 @@ void	a_to_b(t_swap *a, t_swap *b, int median)
 		ft_pb(a, b);
 }
 
-void	b_to_a(t_swap **a, t_swap **b)
+void top_of_a(t_swap **a)
 {
-	t_swap *cheap;
-	
-	cheap = get_cheap(*b);
-	ft_pa;
+	t_swap *min_a;
+
+	min_a = min_numbers(*a);
+	while(min_a->index != 0)
+	{
+		if(min_a->above_median == 1)
+		{
+			ft_ra(a);
+			get_index_list(*a);
+		}
+		else
+		{
+			ft_rra(a);
+			get_index_list(*a);			
+		}
+	}
 }

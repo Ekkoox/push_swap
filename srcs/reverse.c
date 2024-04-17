@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:23:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/29 16:15:34 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:33:50 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	reverse_list(t_swap **swap)
 {
 	t_swap	*last;
 
-	if (!*swap)
+	if (!*swap || !(*swap)->next)
 		return (0);
 	last = found_last_list(*swap);
 	last->prev->next = NULL;

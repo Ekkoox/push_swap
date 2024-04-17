@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/15 15:55:15 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:21:00 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 typedef struct s_swap
 {
 	int				nb;
-	int				cost; //initialiser dans b_cost
-	int				index; //initialiser dans get_index
-	int				cheap_cost; //initialiser dans b_cost
-	int				above_median; //initialiser dans get_index
-	struct s_swap	*target; // initialiser dans get_target
+	int				cost;
+	int				index;
+	int				cheap_cost;
+	int				above_median;
+	struct s_swap	*target;
 	struct s_swap	*next;
 	struct s_swap	*prev;
 }					t_swap;
@@ -38,9 +38,12 @@ int					count_arg_list(t_swap *swap);
 int					check_duplicate(char **split);
 int					check_max_and_min(char **split);
 int					check_only_numbers(char **split);
+void				set_cheap(t_swap *b);
+void 				top_of_a(t_swap **a);
 void				sort_three(t_swap **a);
 void				free_stack(t_swap *swap);
 void				error_number_of_args(void);
+void 				b_to_a(t_swap **a, t_swap **b);
 void 				get_index_list(t_swap *swap);
 void				error_arguments(char **split);
 void 				reload_node(t_swap *a, t_swap *b);
@@ -48,14 +51,18 @@ void 				sort_to_b(t_swap **a, t_swap **b);
 void				check_empty_args(int ac, char **av);
 void				sort_push_swap(t_swap **a, t_swap **b);
 void 				a_to_b(t_swap **a, t_swap **b, int median);
-void				rotate_up_median(t_swap *a, t_swap *b, t_swap *cheapest);
-void				rotate_down_median(t_swap *a, t_swap *b, t_swap *cheapest);
+void				rotate_up_median(t_swap **a, t_swap **b, t_swap *cheapest);
+void				rotate_down_median(t_swap **a, t_swap **b, t_swap *cheapest);
+void 				double_b_rotate_a(t_swap **a, t_swap **b, t_swap *cheap_cost);
+void 				rotate_b_double_a(t_swap **a, t_swap **b, t_swap *cheap_cost);
 char				**split_args(int ac, char **av);
-t_swap				*get_cheap(t_swap *b);
 t_swap 				*min_numbers(t_swap *swap);
 t_swap 				*max_numbers(t_swap *swap);
+t_swap				*get_cheapest(t_swap *swap);
 t_swap				*found_last_list(t_swap *swap);
 t_swap				*split_to_list(t_swap *swap, char **split);
+void	displaylist_b(t_swap *swap);
+void	displaylist_a(t_swap *swap);
 
 /*******************COMMANDE**********************/
 void				ft_sa(t_swap *a);
