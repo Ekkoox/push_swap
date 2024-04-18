@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 18:24:42 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/17 17:01:09 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:53:31 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,14 @@ void	b_cost(t_swap *a, t_swap *b)
 		if (!(b->above_median))
 			b->cost = len_b - b->index;
 		if (b->target->above_median)
-			b->cost += b->target->above_median;
+			b->cost += b->target->index;
 		else
 			b->cost += len_a - b->target->index;
 		b = b->next;
 	}
 }
 
-void set_cheap(t_swap *b)
+void	set_cheap(t_swap *b)
 {
 	int		cheap;
 	t_swap	*tmp_b;

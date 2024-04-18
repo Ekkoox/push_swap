@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 15:42:00 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/29 17:20:37 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:10:07 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	add_node(t_swap **swap, int nb)
 	t_swap	*node;
 	t_swap	*last;
 
+	if (!swap)
+		return ;
 	node = malloc(sizeof(t_swap));
 	if (!node)
 		return ;

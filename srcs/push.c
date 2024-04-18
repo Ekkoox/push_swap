@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2024/03/29 17:15:24 by enschnei          #+#    #+#             */
 /*   Updated: 2024/03/29 17:15:24 by enschnei         ###   ########.fr       */
 /*                                                                            */
@@ -12,46 +15,38 @@
 
 #include "push_swap.h"
 
-static int	push_list_to_a(t_swap **a, t_swap **b)
+static int	ft_push(t_swap **a, t_swap **b)
 {
-	t_swap	*tmp;
+	t_swap	*push_node;
 
-	if (!*a)
+	if (!a)
 		return (0);
-	tmp = *a;
-	*a = *b;
-	*b = (*b)->next;
-	if (!tmp)
-		(*a)->next = NULL;
+	push_node = (*a);
+	(*a) = (*a)->next;
+	if (*a)
+		(*a)->prev = NULL;
+	if (!*b)
+	{
+		*b = push_node;
+		push_node->next = NULL;
+	}
 	else
-		(*a)->next = tmp;
+	{
+		push_node->next = *b;
+		push_node->next->prev = push_node;
+		*b = push_node;
+	}
 	return (1);
 }
 
-static int	push_list_to_b(t_swap **a, t_swap **b)
+void	ft_pa(t_swap **b, t_swap **a)
 {
-	t_swap	*tmp;
-
-	if (!*a)
-		return (0);
-	tmp = *b;
-	*b = *a;
-	*a = (*a)->next;
-	if (!tmp)
-		(*b)->next = NULL;
-	else
-		(*b)->next = tmp;
-	return (1);
-}
-
-void	ft_pa(t_swap **a, t_swap **b)
-{
-	if (push_list_to_a(a, b) == 1)
+	if (ft_push(b, a) == 1)
 		ft_printf("pa\n");
 }
 
 void	ft_pb(t_swap **a, t_swap **b)
 {
-	if (push_list_to_b(a, b) == 1)
+	if (ft_push(a, b) == 1)
 		ft_printf("pb\n");
 }

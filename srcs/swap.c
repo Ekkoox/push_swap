@@ -12,31 +12,31 @@
 
 #include "push_swap.h"
 
-static int	swap_list(t_swap *swap)
+static int	swap_list(t_swap **swap)
 {
 	int	tmp;
 
 	if (!swap)
 		return (0);
-	tmp = swap->nb;
-	swap->nb = swap->next->nb;
-	swap->next->nb = tmp;
+	tmp = (*swap)->nb;
+	(*swap)->nb = (*swap)->next->nb;
+	(*swap)->next->nb = tmp;
 	return (1);
 }
 
-void	ft_sa(t_swap *a)
+void	ft_sa(t_swap **a)
 {
 	if (swap_list(a) == 1)
 		ft_printf("sa\n");
 }
 
-void	ft_sb(t_swap *b)
+void	ft_sb(t_swap **b)
 {
 	if (swap_list(b) == 1)
 		ft_printf("sb\n");
 }
 
-void	ft_ss(t_swap *a, t_swap *b)
+void	ft_ss(t_swap **a, t_swap **b)
 {
 	if (swap_list(a) == 1 && swap_list(b) == 1)
 		ft_printf("ss\n");

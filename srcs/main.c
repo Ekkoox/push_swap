@@ -6,51 +6,15 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/17 15:36:14 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:45:10 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	displaylist_a_before(t_swap *swap)
-{
-	while (swap)
-	{
-		printf("Au debut a = %d\n", swap->nb);
-		swap = swap->next;
-	}
-}
-
-void	displaylist_b_before(t_swap *swap)
-{
-	while (swap)
-	{
-		printf("Au debut b = %d\n", swap->nb);
-		swap = swap->next;
-	}
-}
-
-void	displaylist_a(t_swap *swap)
-{
-	while (swap)
-	{
-		printf("a = %d\n", swap->nb);
-		swap = swap->next;
-	}
-}
-
-void	displaylist_b(t_swap *swap)
-{
-	while (swap)
-	{
-		printf("b = %d\n", swap->nb);
-		swap = swap->next;
-	}
-}
-
 int	main(int ac, char **av)
 {
-	char 	**split;
+	char	**split;
 	t_swap	*a;
 	t_swap	*b;
 

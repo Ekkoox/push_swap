@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:19:52 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/29 17:25:09 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:30:01 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	check_only_numbers(char **split)
 				|| split[j][i] == '%')
 				return (1);
 			else
-				return (2);
+				return (1);
 		}
 		j++;
 	}
@@ -112,7 +112,7 @@ int	check_max_and_min(char **split)
 	while (split[j])
 	{
 		if (check_looong(split[j]) == 1)
-			return (3);
+			return (1);
 		nb1 = ft_atol(split[j]);
 		if (nb1 < INT_MIN || nb1 > INT_MAX)
 			return (1);
