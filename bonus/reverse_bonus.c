@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   reverse_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 18:21:44 by enschnei         ###   ########.fr       */
+/*   Created: 2024/03/25 13:23:51 by enschnei          #+#    #+#             */
+/*   Updated: 2024/04/19 16:01:26 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+static void	reverse_list(t_swap **swap)
 {
-	char	**split;
-	t_swap	*a;
-	t_swap	*b;
+	t_swap	*last;
 
-	a = NULL;
-	b = NULL;
-	if (ac == 1)
-		error_number_of_args();
-	split = split_args(ac, av);
-	if (!split)
-		return (write(2, "ERROR\n", 6));
-	error_arguments(split);
-	a = split_to_list(a, split);
-	sort_push_swap(&a, &b);
-	free_stack(a);
-	free_stack(b);
-	ft_free(split, ft_count_line_split(split));
-	return (0);
+	if (!*swap || !(*swap)->next)
+		return ;
+	last = found_last_list(*swap);
+	last->prev->next = NULL;
+	last->next = *swap;
+	last->prev = NULL;
+	*swap = last;
+	last->next->prev = last;
+}
+
+void	ft_rra(t_swap **a)
+{
+	reverse_list(a);
+}
+
+void	ft_rrb(t_swap **b)
+{
+	reverse_list(b);
+}
+
+void	ft_rrr(t_swap **a, t_swap **b)
+{
+	reverse_list(a);
+	reverse_list(b);
 }

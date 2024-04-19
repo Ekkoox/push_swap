@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error_msg_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 18:21:44 by enschnei         ###   ########.fr       */
+/*   Created: 2024/04/19 16:05:56 by enschnei          #+#    #+#             */
+/*   Updated: 2024/04/19 16:05:58 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	error_number_of_args(void)
 {
-	char	**split;
-	t_swap	*a;
-	t_swap	*b;
+	write(2, "Error\n", 6);
+	exit(0);
+}
 
-	a = NULL;
-	b = NULL;
-	if (ac == 1)
-		error_number_of_args();
-	split = split_args(ac, av);
-	if (!split)
-		return (write(2, "ERROR\n", 6));
-	error_arguments(split);
-	a = split_to_list(a, split);
-	sort_push_swap(&a, &b);
-	free_stack(a);
-	free_stack(b);
-	ft_free(split, ft_count_line_split(split));
-	return (0);
+void	error_arguments(char **split)
+{
+	if (check_only_numbers(split) == 1)
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
+	if (check_duplicate(split) == 1)
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
+	if (check_max_and_min(split) == 1)
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
 }
