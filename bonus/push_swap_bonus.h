@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:15:30 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:15:38 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:51:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include "ft_printf.h"
 # include "libft.h"
@@ -49,6 +49,7 @@ void				reload_node(t_swap *a, t_swap *b);
 void				check_empty_args(int ac, char **av);
 void				sort_push_swap(t_swap **a, t_swap **b);
 void				a_to_b(t_swap **a, t_swap **b, int median);
+char				*get_next_line(int fd);
 char				**split_args(int ac, char **av);
 t_swap				*min_numbers(t_swap *swap);
 t_swap				*max_numbers(t_swap *swap);

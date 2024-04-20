@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   error_args_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:05:44 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:05:47 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:51:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	check_empty_args(int ac, char **av)
 {

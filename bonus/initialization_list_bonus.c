@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   initialization_list_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:06:10 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:06:12 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:51:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 t_swap	*found_last_list(t_swap *swap)
 {

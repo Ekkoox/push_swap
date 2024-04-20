@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_up_node_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:06:43 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:06:45 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:52:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	get_index_list(t_swap *swap)
 {

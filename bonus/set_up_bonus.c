@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_up_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:14:10 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:56:52 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 02:29:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	check_command (char *checker, t_swap **a, t_swap **b)
 {
@@ -37,4 +37,15 @@ int	check_command (char *checker, t_swap **a, t_swap **b)
 	else if (ft_strcmp(checker, "rrr\n") == 0)
 		return(ft_rrr(a, b), 0);
 	return (1);
+}
+
+int check_stack_sorted(t_swap *swap)
+{
+	while(swap->next)
+	{
+		if (swap->next > swap->next->nb)
+			return (1);
+		swap = swap->next;
+	}
+	return (0);
 }

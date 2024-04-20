@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_up_algo_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:06:36 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:06:38 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:52:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static void	rotate_up_median(t_swap **a, t_swap **b, t_swap *cheap_cost)
 {

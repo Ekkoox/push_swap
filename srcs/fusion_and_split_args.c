@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fusion_and_split_args.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:58:24 by enschnei          #+#    #+#             */
-/*   Updated: 2024/03/30 11:53:03 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:06:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,7 @@ char	**split_args(int ac, char **av)
 {
 	char	**split;
 	char	*arg;
-	int		i;
-
-	i = 0;
+	
 	check_empty_args(ac, av);
 	arg = join_args(ac, av);
 	if (!arg)

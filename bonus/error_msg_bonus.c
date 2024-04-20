@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   error_msg_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:05:56 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:05:58 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:51:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	error_number_of_args(void)
 {

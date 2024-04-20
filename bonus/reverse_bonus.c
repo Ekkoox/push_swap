@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 13:23:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/19 16:01:26 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:52:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static void	reverse_list(t_swap **swap)
 {
