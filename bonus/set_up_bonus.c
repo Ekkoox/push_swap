@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_up_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:14:10 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/20 02:29:17 by marvin           ###   ########.fr       */
+/*   Created: 2024/04/22 16:13:56 by enschnei          #+#    #+#             */
+/*   Updated: 2024/04/22 19:57:25 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,31 @@ int	check_command (char *checker, t_swap **a, t_swap **b)
 
 int check_stack_sorted(t_swap *swap)
 {
+	if (!swap)
+		return (1);
 	while(swap->next)
 	{
-		if (swap->next > swap->next->nb)
-			return (1);
+		if (swap->nb > swap->next->nb)
+			return (0);
 		swap = swap->next;
 	}
-	return (0);
+	return (1);
+}
+
+t_swap	*get_cheapest(t_swap *swap)
+{
+	while (swap)
+	{
+		if (swap->cheap_cost == 1)
+			return (swap);
+		swap = swap->next;
+	}
+	return (NULL);
+}
+
+int check_checker(t_swap *a, t_swap *b)
+{
+	if (check_stack_sorted(a) == 1 && count_arg_list(b) == 0)
+		return (free_stack(a), free_stack(b), write(2, "OK\n", 3));
+	return (free_stack(a), free_stack(b), write(2, "KO\n", 3));
 }

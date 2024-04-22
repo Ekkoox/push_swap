@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fusion_and_split_args_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:06:02 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/20 02:01:46 by marvin           ###   ########.fr       */
+/*   Updated: 2024/04/22 19:55:29 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**split_args(int ac, char **av)
 	if (!arg)
 	{
 		free(arg);
-		error_number_of_args();
+		error_number_of_args_bonus(ac, av);
 	}
 	split = ft_split(arg, ' ');
 	free(arg);

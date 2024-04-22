@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_args_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:05:44 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/20 01:51:39 by marvin           ###   ########.fr       */
+/*   Created: 2024/04/22 16:15:36 by enschnei          #+#    #+#             */
+/*   Updated: 2024/04/22 19:54:49 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	check_empty_args(int ac, char **av)
 			i++;
 		}
 		if (count == len)
-			error_number_of_args();
+			error_number_of_args_bonus(ac, av);
 		j++;
 	}
 }

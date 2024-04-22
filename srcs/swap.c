@@ -16,7 +16,7 @@ static int	swap_list(t_swap **swap)
 {
 	int	tmp;
 
-	if (!swap)
+	if (!*swap || !(*swap)->next)
 		return (0);
 	tmp = (*swap)->nb;
 	(*swap)->nb = (*swap)->next->nb;

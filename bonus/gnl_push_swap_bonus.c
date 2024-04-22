@@ -101,7 +101,7 @@ char	*get_next_line(int fd, int error_checker)
 	static char	*stack;
 
     if (error_checker == 1)
-        free(stack, NULL);
+		return (free(stack), NULL);
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	stack = ft_read_and_save(fd, stack);

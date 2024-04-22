@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:15:30 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/20 01:51:23 by marvin           ###   ########.fr       */
+/*   Updated: 2024/04/22 19:58:02 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10000
+#endif
 
 # include "ft_printf.h"
 # include "libft.h"
@@ -38,6 +42,9 @@ int					count_arg_list(t_swap *swap);
 int					check_duplicate(char **split);
 int					check_max_and_min(char **split);
 int					check_only_numbers(char **split);
+int 				check_stack_sorted(t_swap *swap);
+int 				check_checker(t_swap *a, t_swap *b);
+int					check_command (char *checker, t_swap **a, t_swap **b);
 void				set_cheap(t_swap *b);
 void				top_of_a(t_swap **a);
 void				free_stack(t_swap *swap);
@@ -49,8 +56,9 @@ void				reload_node(t_swap *a, t_swap *b);
 void				check_empty_args(int ac, char **av);
 void				sort_push_swap(t_swap **a, t_swap **b);
 void				a_to_b(t_swap **a, t_swap **b, int median);
-char				*get_next_line(int fd);
+void				error_number_of_args_bonus(int ac, char **av);
 char				**split_args(int ac, char **av);
+char				*get_next_line(int fd, int error_checker);
 t_swap				*min_numbers(t_swap *swap);
 t_swap				*max_numbers(t_swap *swap);
 t_swap				*get_cheapest(t_swap *swap);

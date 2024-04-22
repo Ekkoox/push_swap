@@ -20,12 +20,14 @@ C_BONUS = main_bonus.c\
 			push_bonus.c\
 			swap_bonus.c\
 			utils_bonus.c\
+			set_up_bonus.c\
 			rotate_bonus.c\
 			reverse_bonus.c\
 			error_msg_bonus.c\
 			error_args_bonus.c\
 			set_up_node_bonus.c\
 			set_up_algo_bonus.c\
+			gnl_push_swap_bonus.c\
 			initialization_list_bonus.c\
 			fusion_and_split_args_bonus.c\
 
@@ -33,7 +35,7 @@ SRCS = $(addprefix srcs/,$(C_FILES))
 
 SRCS_BONUS = $(addprefix bonus/,$(C_BONUS))
 
-CFLAGS = -Wall -Werror -Wextra -I includes/
+CFLAGS = -Wall -Werror -Wextra -I includes/ -g
 
 LIB = ft_printf/libftprintf.a libft/libft.a
 DEPS = $(addprefix lib/,$(LIB))

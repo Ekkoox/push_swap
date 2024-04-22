@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/20 02:34:54 by marvin           ###   ########.fr       */
+/*   Created: 2024/04/22 16:15:19 by enschnei          #+#    #+#             */
+/*   Updated: 2024/04/22 20:01:20 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,22 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	if (ac == 1)
-		error_number_of_args();
+	error_number_of_args_bonus(ac, av);
 	split = split_args(ac, av);
 	if (!split)
-		return (write(2, "ERROR\n", 6), NULL));
+		return (write(2, "ERROR\n", 6));
 	error_arguments(split);
 	a = split_to_list(a, split);
-	while(1)
+	ft_free(split, ft_count_line_split(split));
+	while (1)
 	{
 		checker = get_next_line(0, 0);
-		if (checker, &a, &b)
+		if (checker == 0)
+			break ;
+		if (check_command(checker, &a, &b))
 			return (free_stack(a), free_stack(b), free(checker),
-					get_next_line(0, 1), write(2, "ERROR\n", 6));
+				get_next_line(0, 1), write(2, "ERROR\n", 6));
+		free (checker);
 	}
-	if (check_stack_sorted(a) == 1 && count_len_args(b) == 0)
-		return (free_stack(a), free_stack(b), write(2, "OK\n", 3)); 
-	else
-		(return (free_stack(a), free_stack(b), write(2, "KO\n", 3)))
-	ft_free(split, ft_count_line_split(split));
-	return (0);
+	check_checker(a, b);
 }

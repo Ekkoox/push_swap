@@ -16,7 +16,7 @@ static void	ft_push(t_swap **a, t_swap **b)
 {
 	t_swap	*push_node;
 
-	if (!a)
+	if (!*a)
 		return ;
 	push_node = (*a);
 	(*a) = (*a)->next;
