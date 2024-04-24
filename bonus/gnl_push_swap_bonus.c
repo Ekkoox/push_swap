@@ -100,7 +100,7 @@ char	*get_next_line(int fd, int error_checker)
 	char		*line;
 	static char	*stack;
 
-    if (error_checker == 1)
+	if (error_checker == 1)
 		return (free(stack), NULL);
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
@@ -112,4 +112,4 @@ char	*get_next_line(int fd, int error_checker)
 	if (!line && stack)
 		free(stack);
 	return (line);
-}   
+}

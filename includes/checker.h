@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:15:30 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/22 19:58:02 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:37:44 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10000
-#endif
+# endif
 
 # include "ft_printf.h"
 # include "libft.h"
@@ -42,9 +42,9 @@ int					count_arg_list(t_swap *swap);
 int					check_duplicate(char **split);
 int					check_max_and_min(char **split);
 int					check_only_numbers(char **split);
-int 				check_stack_sorted(t_swap *swap);
-int 				check_checker(t_swap *a, t_swap *b);
-int					check_command (char *checker, t_swap **a, t_swap **b);
+int					check_stack_sorted(t_swap *swap);
+int					check_checker(t_swap *a, t_swap *b);
+int					check_command(char *checker, t_swap **a, t_swap **b);
 void				set_cheap(t_swap *b);
 void				top_of_a(t_swap **a);
 void				free_stack(t_swap *swap);

@@ -6,11 +6,11 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:05:56 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/22 19:50:44 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:34:01 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker.h"	
 
 void	error_number_of_args_bonus(int ac, char **av)
 {
@@ -20,6 +20,12 @@ void	error_number_of_args_bonus(int ac, char **av)
 		write(2, "Error\n", 6);
 		exit(0);
 	}
+}
+
+void	error_number_of_args(void)
+{
+	write(2, "Error\n", 6);
+	exit(0);
 }
 
 void	error_arguments(char **split)
