@@ -6,11 +6,24 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:22:02 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/25 14:27:50 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:38:46 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_stack_sorted(t_swap *swap)
+{
+	if (!swap)
+		return (1);
+	while (swap->next)
+	{
+		if (swap->nb > swap->next->nb)
+			return (0);
+		swap = swap->next;
+	}
+	return (1);
+}
 
 t_swap	*get_cheapest(t_swap *swap)
 {
@@ -64,13 +77,15 @@ void	sort_push_swap(t_swap **a, t_swap **b)
 {
 	if (count_arg_list(*a) == 1)
 		return ;
-	if (count_arg_list(*a) == 2)
+	else if (count_arg_list(*a) == 2)
 	{
 		if ((*a)->nb > (*a)->next->nb)
 			ft_sa(a);
 	}
 	else if (count_arg_list(*a) == 3)
 		sort_three(a);
+	else if (count_arg_list(*a) > 3 && check_stack_sorted(*a) == 1)
+		return ;
 	else
 		sort_to_b(a, b);
 }

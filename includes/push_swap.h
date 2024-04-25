@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/18 17:02:47 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:35:36 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int					count_arg_list(t_swap *swap);
 int					check_duplicate(char **split);
 int					check_max_and_min(char **split);
 int					check_only_numbers(char **split);
+int					check_stack_sorted(t_swap *swap);
 void				set_cheap(t_swap *b);
 void				top_of_a(t_swap **a);
 void				free_stack(t_swap *swap);
