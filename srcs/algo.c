@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:22:02 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/18 16:51:53 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:27:50 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static void	sort_three(t_swap **a)
 {
 	if ((*a)->nb > (*a)->next->nb && (*a)->nb > (*a)->next->next->nb)
 		ft_ra(a);
+	if ((*a)->next->nb > (*a)->next->next->nb)
+		ft_rra(a);
 	if ((*a)->nb < (*a)->next->nb && (*a)->next->nb > (*a)->next->next->nb)
 	{
 		ft_rra(a);
@@ -34,8 +36,6 @@ static void	sort_three(t_swap **a)
 	}
 	if ((*a)->nb > (*a)->next->nb)
 		ft_sa(a);
-	if ((*a)->next->nb > (*a)->next->next->nb)
-		ft_rra(a);
 }
 
 static void	sort_to_b(t_swap **a, t_swap **b)
