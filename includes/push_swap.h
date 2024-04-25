@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:16 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/25 17:35:36 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:48:50 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int					check_stack_sorted(t_swap *swap);
 void				set_cheap(t_swap *b);
 void				top_of_a(t_swap **a);
 void				free_stack(t_swap *swap);
-void				error_number_of_args(void);
 void				b_to_a(t_swap **a, t_swap **b);
 void				get_index_list(t_swap *swap);
 void				error_arguments(char **split);

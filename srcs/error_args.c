@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:19:52 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/18 16:30:01 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:00:43 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ void	check_empty_args(int ac, char **av)
 			i++;
 		}
 		if (count == len)
-			error_number_of_args();
+		{
+			write(2, "Error\n", 6);
+			exit(0);
+		}
 		j++;
 	}
 }

@@ -6,17 +6,11 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:14:17 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/24 11:33:54 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:58:33 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	error_number_of_args(void)
-{
-	write(2, "Error\n", 6);
-	exit(0);
-}
 
 void	error_arguments(char **split)
 {

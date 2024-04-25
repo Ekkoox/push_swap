@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:05:56 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/24 11:34:01 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:49:28 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ void	error_number_of_args_bonus(int ac, char **av)
 {
 	(void) av;
 	if (ac == 1)
-	{
-		write(2, "Error\n", 6);
 		exit(0);
-	}
 }
 
 void	error_number_of_args(void)

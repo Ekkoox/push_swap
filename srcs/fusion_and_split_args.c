@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:58:24 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/24 11:38:03 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:50:46 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**split_args(int ac, char **av)
 	if (!arg)
 	{
 		free(arg);
-		error_number_of_args();
+		exit(0);
 	}
 	split = ft_split(arg, ' ');
 	free(arg);

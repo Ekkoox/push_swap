@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 12:28:51 by enschnei          #+#    #+#             */
-/*   Updated: 2024/04/25 17:36:34 by enschnei         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:01:20 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	if (ac == 1)
-		error_number_of_args();
+		exit(0);
+	check_empty_args(ac, av);
 	split = split_args(ac, av);
 	if (!split)
 		return (write(2, "ERROR\n", 6));
